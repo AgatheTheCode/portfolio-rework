@@ -23,7 +23,7 @@ import {RouterLink} from "vue-router";
           <RouterLink to="/competences" class="aNav">Skills</RouterLink>
         </li>
         <li>
-          <Router-link to="/studies" class="aNav">Education</Router-link>
+          <Router-link to="/education" class="aNav">Education</Router-link>
         </li>
         <li>
           <Router-link to="/experiences" class="aNav">Experiences</Router-link>
