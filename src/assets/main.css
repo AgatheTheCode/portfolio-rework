@@ -1,0 +1,74 @@
+@import './reset.css';
+@import './base.css';
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #444440;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.nav2 ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+li{
+    padding: .25rem;
+    margin: .5rem .5rem .15rem .5rem;
+}
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    padding: .25rem;
+    margin: .5rem .5rem .15rem .5rem;
+}
+
+wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+}
+.content div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.text-primary {
+}
+
+.text-secondary {
+}
+
+.text-tertiary {
+
+}
