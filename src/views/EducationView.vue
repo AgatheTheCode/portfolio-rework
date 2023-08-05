@@ -19,7 +19,6 @@ let data = [
     school: 'University of Helsinki'
   },
 ]
-
 </script>
 
 <template>
