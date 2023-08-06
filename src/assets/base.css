@@ -23,6 +23,7 @@ body {
 }
 
 .title {
+    font-family: 'DM Serif Display', serif;
     text-decoration: none;
     color: #fcf9f4;
 }
@@ -42,6 +43,7 @@ body {
 .aNav {
     color: #fcf9f4;
     text-decoration: none;
+    font-family: 'Noto Serif', serif;
     /* smooth transitions */
     transition: font-size 0.2s ease-in-out;
 }
