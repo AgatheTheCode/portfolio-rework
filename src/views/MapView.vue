@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="map-container">
-        <l-map :zoom="mapData.zoom" :center= center id="map">
+        <l-map :zoom="mapData.zoom" :center= "center" id="map">
           <l-tile-layer :key="mapData.name"
                         :name="mapData.name"
                         :url="mapData.url"
@@ -49,15 +49,17 @@ let long: number = 8.5391825;
 let mapData: any = {};
 
 //déclaration des refs
-let center = ref(latLng(lat, long));
-let text = ref();
+let center:any = ref(latLng(lat, long));
+let text:any = ref();
 
 function init() {
-  lat = 47.3686498;
+  let lat:number = 47.3686498;
   let long: number = 8.5391825;
   //let text: string = 'Zurich is a city'
   let mapData: any = {};
   text.value = 'Zurich is a city'
+  center.value = latLng(lat, long);
+
 }
 init();
 
