@@ -29,8 +29,6 @@
           <l-marker :lat-lng="[48.573406, 7.752111]"></l-marker>
           <l-marker :lat-lng="[48.820419, 7.791370]"></l-marker>
           <l-marker :lat-lng="[50.3685, 3.0809]"></l-marker>
-
-
         </l-map>
       </div>
     </div>
@@ -70,14 +68,12 @@ mapData = {
   url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 };
-console.log(mapData)
 // Fonction fléchée pour gérer le clic sur le bouton
 const buttonClicked = (id: string) => {
   let txt: string = '';
   console.log(id);
   switch (id) {
     case 'Paris':
-      console.log('case Paris');
       lat = 48.8534;
       long = 2.3488;
       txt = 'Paris is the city in which I have passed my University entrance diploma in literary studies.' +
