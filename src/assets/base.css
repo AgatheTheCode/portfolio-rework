@@ -1,4 +1,4 @@
-/* Global styles */
+/* Global styles
 *,
 *::before,
 *::after {
@@ -9,7 +9,7 @@
 
 body {
     max-height: 100vh;
-    /*overflow-y: hidden;*/
+    /*overflow-y: hidden;
     line-height: 1.6;
     font-size: 15px;
     text-rendering: optimizeLegibility;
@@ -17,7 +17,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .wrapper {
     background-color: #757969;
 }
