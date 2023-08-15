@@ -18,16 +18,18 @@
         </div>
       </div>
       <div class="map-container">
-        <l-map :zoom="mapData.zoom" :center= "center" id="map">
-          <l-tile-layer :key="mapData.name"
-                        :name="mapData.name"
-                        :url="mapData.url"
-                        :attribution="mapData.attribution"></l-tile-layer>
+        <l-map :zoom="mapData.zoom" :center="center" id="map">
+          <l-tile-layer
+            :key="mapData.name"
+            :name="mapData.name"
+            :url="mapData.url"
+            :attribution="mapData.attribution"
+          ></l-tile-layer>
           <l-marker :lat-lng="mapData.center"></l-marker>
           <l-marker :lat-lng="[48.8534, 2.3488]"></l-marker>
           <l-marker :lat-lng="[48.8167, 1.95]"></l-marker>
           <l-marker :lat-lng="[48.573406, 7.752111]"></l-marker>
-          <l-marker :lat-lng="[48.820419, 7.791370]"></l-marker>
+          <l-marker :lat-lng="[48.820419, 7.79137]"></l-marker>
           <l-marker :lat-lng="[50.3685, 3.0809]"></l-marker>
         </l-map>
       </div>
@@ -36,74 +38,76 @@
 </template>
 
 <script setup lang="ts">
-import {latLng} from 'leaflet';
-import {LMap, LMarker, LTileLayer} from '@vue-leaflet/vue-leaflet';
-import 'leaflet/dist/leaflet.css';
-import {ref} from "vue";
+import { latLng } from 'leaflet'
+import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
+import 'leaflet/dist/leaflet.css'
+import { ref } from 'vue'
 
 //letiables globales
-let lat: number = 47.3686498;
-let long: number = 8.5391825;
-let mapData: any = {};
+let lat: number = 47.3686498
+let long: number = 8.5391825
+let mapData: any = {}
 
 //déclaration des refs
-let center:any = ref(latLng(lat, long));
-let text:any = ref();
+let center: any = ref(latLng(lat, long))
+let text: any = ref()
 
 function init() {
-  let lat:number = 47.3686498;
-  let long: number = 8.5391825;
+  let lat: number = 47.3686498
+  let long: number = 8.5391825
   //let text: string = 'Zurich is a city'
-  let mapData: any = {};
+  let mapData: any = {}
   text.value = 'Zurich is a city'
-  center.value = latLng(lat, long);
-
+  center.value = latLng(lat, long)
 }
-init();
+
+init()
 
 mapData = {
   zoom: 13,
   center: latLng(lat, long),
   name: 'OpenStreetMap',
   url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-};
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}
 // Fonction fléchée pour gérer le clic sur le bouton
 const buttonClicked = (id: string) => {
-  let txt: string = '';
-  console.log(id);
+  let txt: string = ''
+  console.log(id)
   switch (id) {
     case 'Paris':
-      lat = 48.8534;
-      long = 2.3488;
-      txt = 'Paris is the city in which I have passed my University entrance diploma in literary studies.' +
-          'It had a focus on Biology and Psychology. I did receive the diploma with honors.';
-      break;
+      lat = 48.8534
+      long = 2.3488
+      txt =
+        'Paris is the city in which I have passed my University entrance diploma in literary studies.' +
+        'It had a focus on Biology and Psychology. I did receive the diploma with honors.'
+      break
     case 'Plaisir':
-      lat = 48.8167;
-      long = 1.95;
-      txt = 'I spent my teenage years in this city, I also worked at Castorama and for its municipal services.';
-      break;
+      lat = 48.8167
+      long = 1.95
+      txt =
+        'I spent my teenage years in this city, I also worked at Castorama and for its municipal services.'
+      break
     case 'Strasbourg':
-      lat = 48.573406;
-      long = 7.752111;
-      txt = 'This is where I currently live. I am studying at the University of Strasbourg in the Computer Science department. And I have an Internship at A2micile.';
-      break;
+      lat = 48.573406
+      long = 7.752111
+      txt =
+        'This is where I currently live. I am studying at the University of Strasbourg in the Computer Science department. And I have an Internship at A2micile.'
+      break
     case 'Haguenau':
-      lat = 48.820419;
-      long = 7.791370;
-      txt = 'This where the IUT ( = IT department) is located. I have spent two years there.';
-      break;
+      lat = 48.820419
+      long = 7.79137
+      txt = 'This where the IUT ( = IT department) is located. I have spent two years there.'
+      break
     case 'Douai':
-      lat = 50.3685;
-      long = 3.0809;
-      txt = 'This is where I was born. I have a lot of memories in this city.';
-      break;
+      lat = 50.3685
+      long = 3.0809
+      txt = 'This is where I was born. I have a lot of memories in this city.'
+      break
   }
-  center.value = latLng(lat, long);
-  text.value = txt;
+  center.value = latLng(lat, long)
+  text.value = txt
 }
-
 </script>
 
 <style scoped>
