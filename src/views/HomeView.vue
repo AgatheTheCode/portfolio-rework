@@ -1,67 +1,58 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <main>
     <wrapper class="wrap">
       <section class="title">
         <h1>Agathe Dufour</h1>
-        <h2>Junior Web Developer</h2>
+        <h2>{{ $t("subtitle.home") }}</h2>
         <p class="sous-titre">
-          Ambitious junior web developer looking to gain experience in back-end as well as front-end
-          web development. After developing several plugin for WordPress websites I would like to
-          support my interest in front-end framework by enhancing my skills in VueJs or ReactJs. My
-          experience working as a back-end web developer during my internship taught me how to work
-          in a professional setting, with sensitive data. In this first professional journey I have
-          discovered technologies like VueJs, Leaflet (map), Elementor (Wordpress page builder) and
-          learned much more. My long term goals include pursuing a position in project management
-          with a focus on creativity and rigorous adherence to quality coding practices.
-          Accessibility is a critical point, way to often overlooked yet 50% of the population will
-          be confronted by a handicap in there life, and 13 to 16 percent of the general population
-          is handicapped.
+          {{ $t("description.home") }}
         </p>
       </section>
       <section class="skills">
-        <h3>Skills</h3>
+        <h3>{{ $t("subtitle.skills") }}</h3>
         <ul>
           <li>
-            <img src="assets/images/html-1.svg" alt="" />
-            <p>HTML - experienced</p>
+            <img src="assets/images/html-1.svg" alt=""/>
+            <p>HTML - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/css.png" alt="" />
-            <p>CSS - experienced</p>
+            <img src="assets/images/css.png" alt=""/>
+            <p>CSS - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="" />
-            <p>SASS - Familiar</p>
+            <img src=""/>
+            <p>SASS - {{ $t("fam") }}</p>
           </li>
           <li>
-            <img src="assets/images/Unofficial_JavaScript_logo_2.svg.png" alt="" />
-            <p>JavaScript - experienced</p>
+            <img src="assets/images/Unofficial_JavaScript_logo_2.svg.png" alt=""/>
+            <p>JavaScript - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/Typescript_logo_2020.svg.png" alt="" />
-            <p>TypeScript - familiar</p>
+            <img src="assets/images/Typescript_logo_2020.svg.png" alt=""/>
+            <p>TypeScript - {{ $t("fam") }}</p>
           </li>
           <li>
-            <img src="assets/images/php.svg" alt="" />
-            <p>PHP - experienced</p>
+            <img src="assets/images/php.svg" alt=""/>
+            <p>PHP - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/sql-database-generic.svg" alt="" />
-            <p>SQL - experienced</p>
+            <img src="assets/images/sql-database-generic.svg" alt=""/>
+            <p>SQL - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/c.svg" alt="" />
-            <p>C# - beginner</p>
+            <img src="assets/images/c.svg" alt=""/>
+            <p>C# - {{ $t("beg") }}</p>
           </li>
           <li>
-            <img src="assets/images/vuejs.png" alt="" />
-            <p>VueJs - Familiar</p>
+            <img src="assets/images/vuejs.png" alt=""/>
+            <p>VueJs - {{ $t("fam") }}</p>
           </li>
           <li>
-            <img src="" alt="" />
-            <p>ReactJS - beginner</p>
+            <img src="" alt=""/>
+            <p>ReactJS - {{ $t("beg") }}</p>
           </li>
         </ul>
       </section>
