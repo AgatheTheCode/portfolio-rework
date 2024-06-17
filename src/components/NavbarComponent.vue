@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {RouterLink} from "vue-router";
+import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vue";
 </script>
 
 <template>
@@ -38,6 +39,9 @@ import {RouterLink} from "vue-router";
           <Router-link to="/contact" class="aNav">Contact</Router-link>
         </li>
       </ul>
+    </div>
+    <div class="nav3">
+      <LanguageSwitcherComponent />
     </div>
   </nav>
 </template>
