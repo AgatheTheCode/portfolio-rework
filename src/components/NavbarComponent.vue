@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {RouterLink} from "vue-router";
-import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vue";
+//import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vue";
 </script>
 
 <template>
@@ -17,21 +17,21 @@ import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vu
         <li>
           <RouterLink to="/" class="aNav">Home</RouterLink>
         </li>
-        <li>
+        <!--<li>
           <Router-link to="/about" class="aNav">About</Router-link>
-        </li>
+        </li> -->
         <li>
           <RouterLink to="/competences" class="aNav">Skills</RouterLink>
         </li>
         <li>
           <Router-link to="/education" class="aNav">Education</Router-link>
         </li>
-        <li>
+        <!-- <li>
           <Router-link to="/experiences" class="aNav">Experiences</Router-link>
         </li>
         <li>
           <Router-link to="/projects" class="aNav">Projects</Router-link>
-        </li>
+        </li> -->
         <li>
           <Router-link to="/map" class="aNav"> Map</Router-link>
         </li>
@@ -41,7 +41,7 @@ import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vu
       </ul>
     </div>
     <div class="nav3">
-      <LanguageSwitcherComponent />
+      <!-- <LanguageSwitcherComponent /> WIP -->
     </div>
   </nav>
 </template>
