@@ -19,8 +19,8 @@ jobs:
         run: npm install --no-optional
       - name: Run deployment script
         run: |
-          cd ../../../
+          cd ../../
           ls -l
-          cd ../../../scripts
+          cd ../../scripts
           chmod +x deploy-development.sh
           ./deploy-development.sh
