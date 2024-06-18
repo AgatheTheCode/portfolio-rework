@@ -27,6 +27,7 @@ jobs:
         run: npm run build
 
   deploy:
+    needs: build  # Ensure that deploy job runs only after build job completes successfully
     runs-on: ubuntu-latest
 
     steps:
