@@ -39,4 +39,8 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          
+          ssh-keyscan -p 5022 185.221.182.148 >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          
           ssh -i ~/.ssh/id_rsa -p 5022 muhdbutb@185.221.182.148 'bash scripts/deploy-development.sh'
