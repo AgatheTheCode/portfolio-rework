@@ -28,26 +28,16 @@ jobs:
         run: npm run build
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Set up SSH
+        uses: web factory/ssh-agent@v0.5.4
         with:
-          node-version: '14'
+          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Deploy to development
-        run: npm run deploy
-        env:
-          NODE_ENV: development
+      - name: Deploy to Server
+        run: ssh -p 5022 muhdbutb@185.221.182.148 'bash scripts/deploy-development.sh'
