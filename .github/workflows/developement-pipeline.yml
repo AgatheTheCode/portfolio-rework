@@ -6,23 +6,12 @@ on:
       - develop
 
 jobs:
-  deploy:
+  deploy :
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          chmod 644 ~/.ssh/known_hosts
-
-      - name: Deploy to Server
-        run: |
-          ssh -i ~/.ssh/id_rsa -p 5022 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'bash -s' < scripts/deploy-development.sh
+      - name: Run deployment script
+      run: |
+        chmod +x ./scripts/deploy-development.sh
+        ./scripts/deploy-development.sh
 
   build:
     runs-on: ubuntu-latest
