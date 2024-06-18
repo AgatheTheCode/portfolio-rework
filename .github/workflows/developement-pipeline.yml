@@ -11,5 +11,6 @@ jobs:
     steps:
       - name: run deploy script
         run: |
+          ls -la
           chmod +x ./scripts/deploy-development.sh
           ./scripts/deploy-development.sh
