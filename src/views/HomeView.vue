@@ -15,11 +15,11 @@
         <h3>{{ $t("subtitle.skills") }}</h3>
         <ul>
           <li>
-            <img src="assets/images/html-1.svg" alt=""/>
+            <img src="/src/assets/images/html-1.svg" alt=""/>
             <p>HTML - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/css.png" alt=""/>
+            <img src="/src/assets/images/css.png" alt=""/>
             <p>CSS - {{ $t("exp") }}</p>
           </li>
           <li>
@@ -27,27 +27,27 @@
             <p>SASS - {{ $t("fam") }}</p>
           </li>
           <li>
-            <img src="assets/images/Unofficial_JavaScript_logo_2.svg.png" alt=""/>
+            <img src="/src/assets/images/Unofficial_JavaScript_logo_2.svg.png" alt=""/>
             <p>JavaScript - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/Typescript_logo_2020.svg.png" alt=""/>
+            <img src="/src/assets/images/Typescript_logo_2020.svg.png" alt=""/>
             <p>TypeScript - {{ $t("fam") }}</p>
           </li>
           <li>
-            <img src="assets/images/php.svg" alt=""/>
+            <img src="/src/assets/images/php.svg" alt=""/>
             <p>PHP - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/sql-database-generic.svg" alt=""/>
+            <img src="/src/assets/images/sql-database-generic.svg" alt=""/>
             <p>SQL - {{ $t("exp") }}</p>
           </li>
           <li>
-            <img src="assets/images/c.svg" alt=""/>
+            <img src="/src/assets/images/c.svg" alt=""/>
             <p>C# - {{ $t("beg") }}</p>
           </li>
           <li>
-            <img src="assets/images/vuejs.png" alt=""/>
+            <img src="/src/assets/images/vuejs.png" alt=""/>
             <p>VueJs - {{ $t("fam") }}</p>
           </li>
           <li>
