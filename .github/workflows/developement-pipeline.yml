@@ -8,7 +8,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,24 +19,5 @@ jobs:
         run: npm install --no-optional
       - name: Run deployment script
         run: |
-          chmod +x /scripts/deploy-development.sh  # Ensure the script is executable
-          /scripts/deploy-development.sh           # Run the deployment script
-
-  build:
-    runs-on: ubuntu-latest
-    needs: deploy
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install --no-optional
-
-      - name: Build project
-        run: npm run build
+          chmod +x ./scripts/deploy-development.sh
+          ./scripts/deploy-development.sh
