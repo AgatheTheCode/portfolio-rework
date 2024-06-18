@@ -26,6 +26,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    needs: build  # Ensure that deploy job runs only after build job completes successfully
 
     steps:
       - name: Checkout code
@@ -39,7 +40,7 @@ jobs:
       - name: Add known hosts
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/known_hosts
+          echo "${{ secrets.KNOWN_HOSTS }}" > ~/.ssh/known_hosts
 
       - name: Deploy to Server
         run: ssh -p 5022 muhdbutb@185.221.182.148 'bash scripts/deploy-development.sh'
