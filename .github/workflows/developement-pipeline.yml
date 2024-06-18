@@ -36,5 +36,10 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
+      - name: Add known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/known_hosts
+
       - name: Deploy to Server
         run: ssh -p 5022 muhdbutb@185.221.182.148 'bash scripts/deploy-development.sh'
