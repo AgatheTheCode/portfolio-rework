@@ -42,7 +42,7 @@ jobs:
       - name: Add known hosts
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/authorized_keys
 
       - name: Deploy to Server
         run: ssh -p 5022 muhdbutb@185.221.182.148 'bash public_html/deploy-production.sh'
