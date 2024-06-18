@@ -9,9 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Run deployment script
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
         run: |
-          ls -l
-          cd ../../scripts
-          chmod +x deploy-development.sh
-          ./deploy-development.sh
+          chmod +x ./scripts/deploy-development.sh
+          ./scripts/deploy-development.sh
