@@ -6,23 +6,23 @@ on:
       - develop
 
 jobs:
-
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+
       - name: Deploy to Server
         run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
-          
-          - name: connect and pull
-          run: ssh -p 5022 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /develop && git checkout develop && git pull && exit"
-          
-          ssh -i ~/.ssh/id_rsa -p 5022 muhdbutb@185.221.182.148 'bash scripts/deploy-development.sh'
+          ssh -i ~/.ssh/id_rsa -p 5022 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'bash -s' < scripts/deploy-development.sh
 
   build:
     runs-on: ubuntu-latest
@@ -42,4 +42,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
