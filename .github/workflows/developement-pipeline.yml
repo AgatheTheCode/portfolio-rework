@@ -9,8 +9,7 @@ jobs:
   deploy :
     runs-on: ubuntu-latest
       - name: Run deployment script
-      run: |
-        chmod +x ./scripts/deploy-development.sh
+      run: 
         ./scripts/deploy-development.sh
 
   build:
