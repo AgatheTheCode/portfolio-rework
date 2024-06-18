@@ -20,8 +20,8 @@ jobs:
         run: npm install --no-optional
       - name: Run deployment script
         run: |
-          chmod +x ./scripts/deploy-development.sh  # Ensure the script is executable
-          ./scripts/deploy-development.sh           # Run the deployment script
+          chmod +x /scripts/deploy-development.sh  # Ensure the script is executable
+          /scripts/deploy-development.sh           # Run the deployment script
 
   build:
     runs-on: ubuntu-latest
