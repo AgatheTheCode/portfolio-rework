@@ -3,6 +3,7 @@
 
 @import './map.css';
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Serif&family=Raleway&display=swap');
+
 nav {
     display: flex;
     flex-direction: row;
@@ -15,7 +16,8 @@ nav {
     top: 0;
     z-index: 999;
 }
-.nav2 ul{
+
+.nav2 ul {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -24,23 +26,26 @@ nav {
     align-items: center;
     gap: 1.2rem;
 }
-li{
+
+li {
     padding: .25rem;
     margin: .5rem .5rem .15rem .5rem;
 }
-h1{
+
+h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: #fff;
     padding: .25rem;
     margin: .5rem .5rem .15rem .5rem;
 }
-*,h2,h3,h4,h5,h6{
+
+*, h2, h3, h4, h5, h6 {
     font-family: 'Raleway', sans-serif;
     font-size: medium;
     font-weight: 500;
 }
-button{
+
+button {
     font-family: 'Raleway', sans-serif;
     font-size: small;
     font-weight: 400;
@@ -53,24 +58,18 @@ button{
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
 }
-button:hover{
+
+button:hover {
     background-color: #757969;
     font-weight: 600;
 }
 
-wrap {
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
-}
-
-.title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 60%;
 }
 
 .content {
@@ -81,7 +80,8 @@ wrap {
     gap: 1rem;
     width: 80%;
 }
-.content div{
+
+.content div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -121,6 +121,75 @@ article {
     flex-direction: column;
     gap: 1rem;
 }
+
 .article-inner p {
     padding: .5rem;
+}
+
+footer .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #444440;
+    color: #fff;
+    font-size: small;
+    font-weight: 400;
+}
+
+.links_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.links_div a {
+    margin: 0;
+    width: 33%;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.competences {
+    & article {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
+
+        & .article-inner {
+            width: 50%;
+
+            & p{
+                padding: 0;
+                margin: 0;
+                text-align: start;
+            }
+        }
+        & .article-picture{
+            width: 50%;
+            & img{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+
 }

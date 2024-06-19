@@ -11,5 +11,25 @@ jobs:
     steps:
       - name: run deploy script
         run: |
+<<<<<<< Updated upstream
           chmod +x ./scripts/deploy-development.sh
           ./scripts/deploy-development.sh
+=======
+          cd ./
+          git pull origin main
+          git fetch --tags --force
+  build :
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+>>>>>>> Stashed changes

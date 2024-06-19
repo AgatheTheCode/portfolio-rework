@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineComponent } from 'vue'
+import SectionDivider from '@/components/SectionDivider.vue'
 </script>
 
 <template>
@@ -17,9 +18,11 @@ import { defineComponent } from 'vue'
           ><img src="/src/assets/images/flag.png" alt=""
         /></a> -->
       </div>
-    </div>
-    <div class="credit">
-      <p>Agathe Dufour - 2023</p>
+      <div class="credit">
+        <p>Agathe Dufour - 2024</p>
+        <p>|</p>
+        <p>développé avec </p> <img src="/src/assets/images/vuejs.png" alt="" aria-hidden="true"/>
+      </div>
     </div>
   </footer>
 </template>

@@ -51,7 +51,7 @@ let data = [
         <h4>{{ item.title }}</h4>
         <p>{{ item.date }}</p>
         <p>{{ item.degree }}</p>
-        <p>{{ item.school }}</p>
+        {{ item.school }}
         <p>{{ item.abstract }}</p>
       </div>
     </section>
