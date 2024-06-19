@@ -14,9 +14,6 @@ import {RouterLink} from "vue-router";
     </div>
     <div class="nav2">
       <ul>
-        <li>
-          <RouterLink to="/" class="aNav">Home</RouterLink>
-        </li>
         <!--<li>
           <Router-link to="/about" class="aNav">About</Router-link>
         </li> -->
