@@ -11,9 +11,21 @@ jobs:
     steps:
       - name: Git Operations
         run: |
+<<<<<<< HEAD
           git pull origin main
           git fetch --tags --force
   build :
+=======
+<<<<<<< Updated upstream
+          chmod +x ./scripts/deploy-development.sh
+          ./scripts/deploy-development.sh
+=======
+          cd ./
+          git pull origin main
+          git fetch --tags --force
+  build :
+    needs: deploy
+>>>>>>> beaucoupdetaf
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,3 +38,7 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> beaucoupdetaf
