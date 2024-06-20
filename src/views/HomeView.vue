@@ -5,7 +5,8 @@ import ScrollerComponent from '@/components/ScrollerComponent.vue'
 
 <template>
   <main>
-    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true">
+    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true" alt="">
+
     <div class="skills">
       <ScrollerComponent />
     </div>

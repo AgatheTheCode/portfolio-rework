@@ -1,18 +1,20 @@
 <template>
-  <div>
-    <h1>Map</h1>
+  <div class="sectionMap">
+    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true">
+    <h1>La Carte</h1>
+    <SectionDivider/>
     <div class="map">
       <div class="map-controls">
         <h2>Controls</h2>
         <div class="btn-holder">
+          <button @click="buttonClicked('Douai')">Douai</button>
           <button @click="buttonClicked('Paris')">Paris</button>
           <button @click="buttonClicked('Plaisir')">Plaisir</button>
           <button @click="buttonClicked('Strasbourg')">Strasbourg</button>
           <button @click="buttonClicked('Haguenau')">Haguenau</button>
-          <button @click="buttonClicked('Douai')">Douai</button>
         </div>
-        <div>
-          <p class="presentation">
+        <div class="presentation">
+          <p>
             {{ text }}
           </p>
         </div>
@@ -35,6 +37,7 @@
       </div>
     </div>
   </div>
+  <img class="decor-bottom" src="@/assets/images/plant.png" aria-hidden="true">
 </template>
 
 <script setup lang="ts">
@@ -42,6 +45,7 @@ import { latLng } from 'leaflet'
 import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { ref } from 'vue'
+import SectionDivider from '@/components/SectionDivider.vue'
 
 //letiables globales
 let lat: number = 47.3686498
@@ -112,17 +116,22 @@ const buttonClicked = (id: string) => {
 
 <style scoped>
 .map-container {
-  height: 70vh;
+  height: 90vh;
   width: 70vw;
   background-color: aquamarine;
   border-radius: 10px;
   margin: auto;
+  & #map {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: #444440 0 0 10px 0;
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 50vh;
+  }
 }
 
-#map {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: #444440 0 0 10px 0;
-}
+
 </style>

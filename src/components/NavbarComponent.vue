@@ -1,44 +1,123 @@
 <script setup lang="ts">
-import {RouterLink} from "vue-router";
-//import LanguageSwitcherComponent from "@/components/LanguageSwitcherComponent.vue";
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+
+const isNavOpen = ref(false)
+
+const toggleNav = () => {
+  isNavOpen.value = !isNavOpen.value
+}
 </script>
 
 <template>
   <nav>
-    <div>
+    <div class="nav1">
       <h1>
-        <Router-link to="/" class="title">
+        <RouterLink to="/" class="title">
           Agathe Dufour
-        </Router-link>
+        </RouterLink>
       </h1>
     </div>
+    <!-- <div class="burger" @click="toggleNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div> -->
     <div class="nav2">
       <ul>
-        <!--<li>
-          <Router-link to="/about" class="aNav">About</Router-link>
-        </li> -->
         <li>
           <RouterLink to="/competences" class="aNav">Skills</RouterLink>
         </li>
-        <li>
-          <Router-link to="/education" class="aNav">Education</Router-link>
-        </li>
         <!-- <li>
-          <Router-link to="/experiences" class="aNav">Experiences</Router-link>
+          <RouterLink to="/education" class="aNav">Education</RouterLink>
         </li>
         <li>
-          <Router-link to="/projects" class="aNav">Projects</Router-link>
-        </li> -->
-        <li>
-          <Router-link to="/map" class="aNav"> Map</Router-link>
+          <RouterLink to="/contact" class="aNav">Contact</RouterLink>
         </li>
+        -->
         <li>
-          <Router-link to="/contact" class="aNav">Contact</Router-link>
+          <RouterLink to="/map" class="aNav">Map</RouterLink>
         </li>
+
       </ul>
     </div>
-    <div class="nav3">
-      <!-- <LanguageSwitcherComponent /> WIP -->
-    </div>
+    <!--<div class="nav3">
+       <LanguageSwitcherComponent /> WIP
+    </div>-->
   </nav>
 </template>
+
+<style scoped>
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.nav1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 100%;
+
+  & h1 {
+    font-size: 2rem;
+    color: #fcf9f4;
+  }
+
+  @media (max-width: 768px) {
+    width: 60%;
+    & h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.nav2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+
+
+  & ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    & li {
+      margin: 0 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav2 {
+    gap: .25rem;
+    width: 39%;
+
+    & ul {
+      display: flex;
+      flex-direction: row;
+      gap: .25rem;
+      margin: 0;
+      padding: 0;
+
+      & li {
+        margin: .25rem 0;
+        padding: .25rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+</style>

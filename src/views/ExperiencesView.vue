@@ -2,7 +2,7 @@
 
 <template>
   <section class="experiences">
-    <h3>Experience</h3>
+    <h1>Experience</h1>
     <div>
       <p>
         2022 - 2023 : Back-End Web Developer at
