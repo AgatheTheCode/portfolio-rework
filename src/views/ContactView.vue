@@ -1,25 +1,55 @@
 <template>
-  <div>
-    <h2>Hello this is for refs man!</h2>
-    <p>You have counted {{ counter }} times</p>
-    <input type="text" ref="input">
-    <button @click="submit">Add 1 to counter</button>
+  <div class="mail">
+    <h1>Contact</h1>
+    <form class="mailForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button class="submit" @click="submit">Submit</button>
+    </form>
   </div>
 </template>
 <script lang="ts">
-import {ref} from 'vue'
-export default {
-  name: 'Test',
-  data() {
-    return {
-      counter: 0
-    }
-  },
-  methods: {
-    submit() {
-      this.counter++;
-      console.log(this)
-    }
+//mail sending
+import { ref } from 'vue'
+
+</script>
+<style scoped>
+.mail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.mailForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 60%;
+  @media (max-width: 768px){
+    width: 90%;
   }
 }
-</script>
+input, textarea {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+.submit {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: #555;
+}
+
+</style>

@@ -11,9 +11,11 @@ body {
     line-height: 1.6;
     font-size: 15px;
     text-rendering: optimizeLegibility;
-    background-color: #abb292;
+    background-color: #bcc5a3;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 main {
@@ -22,29 +24,50 @@ main {
 }
 
 .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
     position: relative;
-}
-
-nav {
-    & div {
-        & h1 {
-            color: #FFFFFF;
-
-            & a {
-                color: #FFFFFF;
-
-                & :visited {
-                    color: #FFFFFF;
-                }
-            }
-
+    margin: 2rem auto;
+    @media (max-width: 768px) {
+        margin: 1rem auto;
+        gap: 1.5rem;
+    }
+    & h1{
+        margin-top: 2.5rem;
+        @media (max-width: 768px) {
+            margin-top: 1.5rem;
         }
     }
 }
 
+
 .title {
     font-family: 'DM Serif Display', serif;
     text-decoration: none;
+
+    & h1 {
+        margin-top: 2.5rem;
+        @media (max-width: 768px) {
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+header {
+    & .wrapper {
+        @media (max-width: 768px) {
+            height: 8vh;
+        }
+
+        & nav {
+            @media (max-width: 768px) {
+                height: 100%;
+            }
+        }
+    }
 }
 
 .aNav {
@@ -68,56 +91,68 @@ nav {
 
 .aNav:visited {
     text-decoration: none;
+    color: white;
 }
 
 h1 {
     font-family: 'DM Serif Display', serif;
-    font-size: 2.5em;
-    margin: 0;
-    padding: 0;
+    font-size: 3.5rem;
+    @media (max-width: 768px) {
+        font-size: 2.5rem;
+    }
 }
 
 h2 {
     font-family: 'DM Serif Display', serif;
-    font-size: 2em;
-    margin: 0;
-    padding: 0;
+    font-size: 2rem;
+    font-weight: lighter;
+    @media (max-width: 768px) {
+        font-size: 1.5rem;
+    }
 }
 
 h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.5em;
-    margin: 0;
-    padding: 0;
+    font-size: 1.6rem;
+    @media (max-width: 768px) {
+        font-size: 1.2rem;
+    }
 }
 
 h4 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.2em;
-    margin: 0;
-    padding: 0;
+    font-size: 1.5rem;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 }
 
 h5 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1em;
+    font-size: 1.5rem;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    color: #181818;
+    margin: 1rem;
+    text-decoration-line: underline;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 }
 
 h6 {
     font-family: 'DM Serif Display', serif;
-    font-size: 0.8em;
-    margin: 0;
-    padding: 0;
+    font-size: 0.8rem;
+    @media (max-width: 768px) {
+        font-size: 0.8rem;
+    }
 }
 
 p {
     font-family: 'Noto Serif', serif;
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
+    font-size: 1.25rem;
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 }
 
 a {
@@ -133,15 +168,22 @@ a:hover {
 
 a:active {
     text-decoration: none;
+    color: white;
 }
 
+a:visited {
+    color: white;
+}
 
 .divider {
     margin: 3rem 0;
+    @media (max-width: 768px) {
+        margin: 1rem 0;
+    }
 }
 
 .divider__line {
-    border-bottom: 1px solid rgba(68, 68, 64, 0.27);
+    border-bottom: 2px solid rgba(168, 173, 156, 0.23);
     width: 100vw;
     position: absolute;
     left: 0;
@@ -154,11 +196,19 @@ a:active {
     min-height: fit-content;
     max-height: fit-content;
     box-sizing: border-box;
+    @media (max-width: 768px) {
+        display: flex;
+        height: max-content;
+        flex-direction: column-reverse;
+    }
 
     & p {
         margin: 0;
         padding: 0;
         width: 100%;
+        @media (max-width: 768px) {
+            margin: 2rem auto;
+        }
     }
 
     & .profile {
@@ -166,6 +216,11 @@ a:active {
         overflow: hidden;
         border-radius: 50%;
         box-shadow: 5px 10px 27px -4px #282828;
+        /*responsive design*/
+        @media (max-width: 768px) {
+            height: 80vw;
+            margin: 0 auto;
+        }
     }
 
     & img {
@@ -212,7 +267,7 @@ a:active {
     position: absolute;
     top: 0;
     rotate: 180deg;
-    opacity: 50%;
+    opacity: 20%;
 }
 
 .decor-mid {
@@ -228,7 +283,8 @@ a:active {
     width: 40rem;
     height: auto;
     position: absolute;
-    opacity: 50%;
+    opacity: 30%;
     bottom: 0;
     right: 0;
 }
+

@@ -2,6 +2,7 @@
 
 import SectionDivider from '@/components/SectionDivider.vue'
 import ArticleDivider from '@/components/ArticleDivider.vue'
+
 </script>
 
 <template>
@@ -28,7 +29,7 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
  -->
   <wrapper class="wrap">
     <h1>Mes Compétences</h1>
-
+    <SectionDivider />
     <section class="competences">
       <div>
         <h3>Compétences Development</h3>
@@ -97,9 +98,10 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
         </article>
       </div>
     </section>
+    <img class="decor-mid" src="@/assets/images/plant2.svg" aria-hidden="true">
+    <img class="decor-bottom" src="@/assets/images/plant.png" aria-hidden="true">
   </wrapper>
 </template>
 
 <style scoped>
-
 </style>
