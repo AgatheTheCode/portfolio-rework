@@ -1,12 +1,15 @@
 <script setup lang="ts">
 import SectionDivider from '@/components/SectionDivider.vue'
 import ScrollerComponent from '@/components/ScrollerComponent.vue'
+import BackgroundTopFlowers from '@/components/backgroundTopFlowers.vue'
+import BackgroundBottomFlowers from '@/components/backgroundBottomFlowers.vue'
+import profilePic from '@/assets/images/profil.jpeg'
+
 </script>
 
 <template>
   <main>
-    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true" alt="">
-
+    <background-top-flowers />
     <div class="skills">
       <ScrollerComponent />
     </div>
@@ -21,7 +24,7 @@ import ScrollerComponent from '@/components/ScrollerComponent.vue'
             {{ $t('description.home') }}
           </p>
           <div class="profile">
-            <img src="@/assets/images/profil.jpeg" aria-hidden="true" alt="">
+            <img :src="profilePic" aria-hidden="true" alt="">
           </div>
         </div>
       </section>
@@ -78,8 +81,7 @@ import ScrollerComponent from '@/components/ScrollerComponent.vue'
         </div>
         <SectionDivider />
       </section>
-      <img class="decor-mid" src="@/assets/images/plant2.svg" aria-hidden="true">
-      <img class="decor-bottom" src="@/assets/images/plant.png" aria-hidden="true">
+      <background-bottom-flowers />
 
     </wrapper>
   </main>
