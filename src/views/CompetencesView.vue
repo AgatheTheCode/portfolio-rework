@@ -35,30 +35,94 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
         <h3>Compétences Development</h3>
         <article>
           <div class="article-inner">
-            <h4>Developper à l'aide d'un framework côté client</h4>
-            <p>J'ai eu l'occasion de developper plusieurs applications avec des framework front-end comme ReactJs ou
-               VueJS</p>
-            <ArticleDivider />
-            <h4>Developper à l'aide d'un framework côté serveur</h4>
-            <p>J'ai eu l'occasion de developper plusieurs applications avec des framework back-end comme Laravel ou
-               Symfony</p>
+            <h4>Développement d'un CMS Laravel-VueJS</h4>
+            <div class="techno">
+              <img src="@/assets/images/laravel.svg" alt="Laravel">
+              <img src="@/assets/logo.svg" alt="VueJS">
+            </div>
+            <div class="text">
+              <p> Lors de la mise en production de la refonte d’Azaé.com, nous avons constaté que WordPress atteignait
+                  ses
+                  limites techniques. En effet, cet environnement manque de souplesse pour le développement
+                  (dockerisation
+                  complexe, ralentissements, mises à jour de plugins délicates, base de données compliquée…).
+              </p>
+              <ul>
+                <p>Après une analyse approfondie, nous avons identifié quatre grandes solutions :</p>
+
+                <li><p>1. Passer à un autre CMS plus performant (Drupal)</p></li>
+                <li><p>2. Adopter un WordPress Headless (permettant un front en VueJS, résolvant les problèmes de
+                       performances mais
+                       pas les autres)
+                </p></li>
+                <li><p>3. Utiliser un CMS Laravel</p></li>
+                <li><p>4. Créer notre propre CMS Laravel</p></li>
+              </ul>
+              <p> Nous avons finalement opté pour Laravel. Cette décision a conduit à une nouvelle analyse des
+                  différents
+                  produits existants sur le marché (Statamic, Lavalite, Winter, October…). À l'issue de cette analyse,
+                  nous avons décidé de développer notre propre CMS de A à Z. En effet, beaucoup de ces CMS stockent les
+                  pages directement sous forme de templates et non en base de données, ce qui est pour nous
+                  indispensable.</p>
+
+              <p>J’ai donc commencé par structurer les tables sous Miro afin de partager le projet avec l’équipe et
+                 prendre en compte les différents besoins (par exemple, les métadonnées nécessaires au SEO).</p>
+
+              <p>Une fois cette étape validée par le lead développeur, Léo Imbs, j’ai créé l'environnement
+                 Laravel-VueJS.
+                 J’ai choisi Laravel avec JetStream pour gérer l’authentification et l’authentification à double
+                 facteur,
+                 ainsi qu'Inertia avec Server Side Rendering (SSR) pour le front en VueJS.</p>
+
+              <p>Le SSR permet au serveur de délivrer des pages pré-calculées au lieu de JavaScript à compiler côté
+                 client. Cela réduit la bande passante nécessaire, accélère les chargements, et surtout, permet aux
+                 robots d’indexer le site. À mon avis, le plus grand défi de ce développement est la performance
+                 SEO.</p>
+
+              <p>Finalement, j’ai dockerisé le projet avec Laravel Sail pour permettre à mes collègues de travailler
+                 efficacement dessus. Ce projet a deux volets : le développement et la maintenance du CMS, et la
+                 création
+                 de sites avec celui-ci. La dockerisation rend le développement plus flexible, permet de cloner le
+                 projet
+                 pour d'autres constructions, et de cloner le site en cas de forte affluence pour offrir une expérience
+                 optimale.</p>
+
+              <p> Piloter l’aspect technique de ce produit m’a offert une nouvelle perspective sur le développement.
+                  Jusqu’à présent, je développais uniquement des services en réponse aux demandes de mes collègues.
+                  Maintenant, je dois anticiper et intégrer leurs besoins divers et spécifiques. Assurer la qualité et
+                  la
+                  pertinence des outils et technologies utilisés est crucial avant même d'initier le développement.</p>
+
+              <p>De plus, nous souhaitons rendre nos sites plus respectueux de l'environnement et plus accessibles, des
+                 paramètres tout aussi importants.</p>
+
+              <ul><p>En termes de développement, j’ai identifié trois grandes phases :</p></ul>
+              <li><p>1. Le développement du squelette back-end (en cours)</p></li>
+              <li><p>2. Le développement des fonctionnalités avancées (éditeur WYSIWYG, constructeur de pages similaire
+                     à
+                     Elementor…)</p></li>
+              <li><p> 3. Le développement des outils de gestion propres aux besoins de nos spécialistes</p></li>
+
+              <p>Une fois ces trois phases achevées, nous pourrons entamer la refonte d’un de nos sites.
+              </p>
+            </div>
             <ArticleDivider />
 
             <h4>Développer des dispositifs interactif sophistiqué</h4>
-            <div>
-              <h5>Technologie utilisé</h5>
-              <p>Flutter <img src="@/assets/images/flutter.svg" aria-hidden="true"></p>
+            <div class="techno">
+              <img src="@/assets/images/flutter.svg" alt="Flutter">
             </div>
             <p>J'ai eu l'occasion de developper plusieurs applications avec des dispositifs interactif sophistiqué,
                comme
                "Acab Locator" en Flutter.
                Cette application permet de prendre en photos des grafiti ACAB et de les géolocaliser.
-               Afin de garantir la sécurité et fiabilité des données une authentification gérer par Firebase (un service
+               Afin de garantir la sécurité et fiabilité des données une authentification gérer par Firebase (un
+               service
                Google).</p>
             <ArticleDivider />
 
             <h4>JSP</h4>
-            <p>Les mois derniers j’ai eu l’occasion de travailler sur deux projets majeurs, la refonte back-end de
+            <p>Les mois derniers j’ai eu l’occasion de travailler sur la refonte back-end de
                Domaliance et la création d’un CMS sous Laravel avec en technologie Front-End VueJS.
 
                Refonte Back-end de Domaliance :
@@ -68,15 +132,19 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
                non suivies sur le git, permettent par exemple de stocker des mots de passe, des token, ou plus
                simplement la marque du site.
 
-               L’optimisation quant à elle à été plus profonde et plus longue à mettre en place. En effet sur les sites
-               nous avions, et avons encore, des fichiers de fonctions PHP de plusieurs millier de lignes. Ces fichiers
+               L’optimisation quant à elle à été plus profonde et plus longue à mettre en place. En effet sur les
+               sites
+               nous avions, et avons encore, des fichiers de fonctions PHP de plusieurs millier de lignes. Ces
+               fichiers
                se répètent de plugins en plugins. J’ai donc entrepris de mettre toutes ces fonctions dans des classes
                spécifiques hors des fichiers de thèmes et des fichiers de plugin. Ainsi si un plugin à besoin de
-               récupérer la note d’un service, il nous suffit d’appeler une fonction de la classe “ReviewsDataFetcher”.
+               récupérer la note d’un service, il nous suffit d’appeler une fonction de la classe
+               “ReviewsDataFetcher”.
                J’ai profité de cette mutualisation du code pour mettre en place des procédures stockées, qui sont plus
                sûres, rapides et efficientes que les requêtes SQL directement dans le code.
                Finalement j’ai aussi réduit la taille des fichiers JavaScripts pour qu’ils ne fassent plus que le
-               minimum. Lorsqu’une requête AJAX est faite, c’est la classe PHP qui est recalculée par le serveur Apache.
+               minimum. Lorsqu’une requête AJAX est faite, c’est la classe PHP qui est recalculée par le serveur
+               Apache.
                Ainsi le tableau des données récupéré par notre API (OZONE) n’est jamais accessible depuis la console.
             </p>
           </div>
@@ -104,4 +172,27 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
 </template>
 
 <style scoped>
+.techno {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+
+  & img {
+    width: 100%;
+    filter: drop-shadow(5px 5px 10px #838383);
+  }
+}
+
+.text {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  & p{
+  }
+}
 </style>
