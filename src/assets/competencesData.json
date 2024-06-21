@@ -1,0 +1,102 @@
+{
+  "paragraphs": {
+    "Développement d'un CMS Laravel-VueJS": [
+      {
+        "id": 1,
+        "tag": "p",
+        "content": "Lors de la mise en production de la refonte d’Azaé.com, nous avons constaté que WordPress atteignait ses limites techniques. En effet, cet environnement manque de souplesse pour le développement (dockerisation complexe, ralentissements, mises à jour de plugins délicates, base de données compliquée…)."
+      },
+      {
+        "id": 2,
+        "tag": "p",
+        "content": "Nous avons donc envisagé plusieurs solutions :"},
+      {
+        "id": 3,
+        "tag": "ul",
+        "items": [
+          {
+            "id": 1,
+            "tag": "li",
+            "content": "Passer à un autre CMS plus performant (Drupal)"
+          },
+          {
+            "id": 2,
+            "tag": "li",
+            "content": "Adopter un WordPress Headless (permettant un front en VueJS, résolvant les problèmes de performances mais pas les autres)"
+          },
+          {
+            "id": 3,
+            "tag": "li",
+            "content": "Utiliser un CMS Laravel"
+          },
+          {
+            "id": 4,
+            "tag": "li",
+            "content": "Créer notre propre CMS Laravel"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "tag": "p",
+        "content": "Nous avons finalement opté pour Laravel. Cette décision a conduit à une nouvelle analyse des différents produits existants sur le marché (Statamic, Lavalite, Winter, October…). À l'issue de cette analyse, nous avons décidé de développer notre propre CMS de A à Z. En effet, beaucoup de ces CMS stockent les pages directement sous forme de templates et non en base de données, ce qui est pour nous indispensable."
+      },
+      {
+        "id": 5,
+        "tag": "p",
+        "content": "J’ai donc commencé par structurer les tables sous Miro afin de partager le projet avec l’équipe et prendre en compte les différents besoins (par exemple, les métadonnées nécessaires au SEO)."
+      },
+      {
+        "id": 6,
+        "tag": "p",
+        "content": "Une fois cette étape validée par le lead développeur, Léo Imbs, j’ai créé l'environnement Laravel-VueJS. J’ai choisi Laravel avec JetStream pour gérer l’authentification et l’authentification à double facteur, ainsi qu'Inertia avec Server Side Rendering (SSR) pour le front en VueJS."
+      },
+      {
+        "id": 7,
+        "tag": "p",
+        "content": "Le SSR permet au serveur de délivrer des pages pré-calculées au lieu de JavaScript à compiler côté client. Cela réduit la bande passante nécessaire, accélère les chargements, et surtout, permet aux robots d’indexer le site. À mon avis, le plus grand défi de ce développement est la performance SEO."
+      },
+      {
+        "id": 8,
+        "tag": "p",
+        "content": "Finalement, j’ai dockerisé le projet avec Laravel Sail pour permettre à mes collègues de travailler efficacement dessus. Ce projet a deux volets : le développement et la maintenance du CMS, et la création de sites avec celui-ci. La dockerisation rend le développement plus flexible, permet de cloner le projet pour d'autres constructions, et de cloner le site en cas de forte affluence pour offrir une expérience optimale."
+      },
+      {
+        "id": 9,
+        "tag": "p",
+        "content": "Piloter l’aspect technique de ce produit m’a offert une nouvelle perspective sur le développement. Jusqu’à présent, je développais uniquement des services en réponse aux demandes de mes collègues. Maintenant, je dois anticiper et intégrer leurs besoins divers et spécifiques. Assurer la qualité et la pertinence des outils et technologies utilisés est crucial avant même d'initier le développement."
+      },
+      {
+        "id": 10,
+        "tag": "p",
+        "content": "De plus, nous souhaitons rendre nos sites plus respectueux de l'environnement et plus accessibles, des paramètres tout aussi importants."
+      },
+      {
+        "id": 11,
+        "tag": "ul",
+        "items": [
+          {
+            "id": 1,
+            "tag": "li",
+            "content": "Le développement du squelette back-end (en cours)"
+          },
+          {
+            "id": 2,
+            "tag": "li",
+            "content": "Le développement des fonctionnalités avancées (éditeur WYSIWYG, constructeur de pages similaire à Elementor…)"
+          },
+          {
+            "id": 3,
+            "tag": "li",
+            "content": "Le développement des outils de gestion propres aux besoins de nos spécialistes"
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "tag": "p",
+        "content": "Une fois ces trois phases achevées, nous pourrons entamer la refonte d’un de nos sites."
+      }
+    ]
+  }
+}

@@ -2,11 +2,12 @@
 
 import SectionDivider from '@/components/SectionDivider.vue'
 import ArticleDivider from '@/components/ArticleDivider.vue'
+import CompetenceComponent from '@/components/CompetenceComponent.vue'
 
 </script>
 
 <template>
-  <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true">
+  <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true" alt="">
 
   <!--
 
@@ -32,9 +33,7 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
     <SectionDivider />
     <section class="competences">
       <div>
-        <h3>Compétences Development</h3>
-        <article>
-          <div class="article-inner">
+          <!-- <div class="article-inner">
             <h4>Développement d'un CMS Laravel-VueJS</h4>
             <div class="techno">
               <img src="@/assets/images/laravel.svg" alt="Laravel">
@@ -105,65 +104,70 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
 
               <p>Une fois ces trois phases achevées, nous pourrons entamer la refonte d’un de nos sites.
               </p>
-            </div>
-            <ArticleDivider />
+            </div> -->
 
-            <h4>Développer des dispositifs interactif sophistiqué</h4>
-            <div class="techno">
-              <img src="@/assets/images/flutter.svg" alt="Flutter">
-            </div>
-            <p>J'ai eu l'occasion de developper plusieurs applications avec des dispositifs interactif sophistiqué,
-               comme
-               "Acab Locator" en Flutter.
-               Cette application permet de prendre en photos des grafiti ACAB et de les géolocaliser.
-               Afin de garantir la sécurité et fiabilité des données une authentification gérer par Firebase (un
-               service
-               Google).</p>
-            <ArticleDivider />
 
-            <h4>JSP</h4>
-            <p>Les mois derniers j’ai eu l’occasion de travailler sur la refonte back-end de
-               Domaliance et la création d’un CMS sous Laravel avec en technologie Front-End VueJS.
+          <CompetenceComponent :technologies="[
+            { id: 1, img: 'Laravel', name: 'Laravel' },
+            { id: 2, img: 'VueJS', name: 'VueJS' },
+          ]" />
+          <ArticleDivider />
+          <!--
+                    <h4>Développer des dispositifs interactif sophistiqué</h4>
+                    <div class="techno">
+                      <img src="@/assets/images/flutter.svg" alt="Flutter">
+                    </div>
+                    <p>J'ai eu l'occasion de developper plusieurs applications avec des dispositifs interactif sophistiqué,
+                       comme
+                       "Acab Locator" en Flutter.
+                       Cette application permet de prendre en photos des grafiti ACAB et de les géolocaliser.
+                       Afin de garantir la sécurité et fiabilité des données une authentification gérer par Firebase (un
+                       service
+                       Google).</p>
+                    <ArticleDivider />
 
-               Refonte Back-end de Domaliance :
-               Cette refonte à 3 objectifs : sécuriser, optimiser et fiabiliser le site.
+                    <h4>JSP</h4>
+                    <p>Les mois derniers j’ai eu l’occasion de travailler sur la refonte back-end de
+                       Domaliance et la création d’un CMS sous Laravel avec en technologie Front-End VueJS.
 
-               La sécurisation du site à été faite par la mise en place de variables d'environnements. Ces variables,
-               non suivies sur le git, permettent par exemple de stocker des mots de passe, des token, ou plus
-               simplement la marque du site.
+                       Refonte Back-end de Domaliance :
+                       Cette refonte à 3 objectifs : sécuriser, optimiser et fiabiliser le site.
 
-               L’optimisation quant à elle à été plus profonde et plus longue à mettre en place. En effet sur les
-               sites
-               nous avions, et avons encore, des fichiers de fonctions PHP de plusieurs millier de lignes. Ces
-               fichiers
-               se répètent de plugins en plugins. J’ai donc entrepris de mettre toutes ces fonctions dans des classes
-               spécifiques hors des fichiers de thèmes et des fichiers de plugin. Ainsi si un plugin à besoin de
-               récupérer la note d’un service, il nous suffit d’appeler une fonction de la classe
-               “ReviewsDataFetcher”.
-               J’ai profité de cette mutualisation du code pour mettre en place des procédures stockées, qui sont plus
-               sûres, rapides et efficientes que les requêtes SQL directement dans le code.
-               Finalement j’ai aussi réduit la taille des fichiers JavaScripts pour qu’ils ne fassent plus que le
-               minimum. Lorsqu’une requête AJAX est faite, c’est la classe PHP qui est recalculée par le serveur
-               Apache.
-               Ainsi le tableau des données récupéré par notre API (OZONE) n’est jamais accessible depuis la console.
-            </p>
-          </div>
-          <div class="article-picture">
-            <img src="@/assets/images/profil.jpeg">
-            <img src="@/assets/images/profil.jpeg">
-            <img src="@/assets/images/profil.jpeg">
-            <img src="@/assets/images/profil.jpeg">
+                       La sécurisation du site à été faite par la mise en place de variables d'environnements. Ces variables,
+                       non suivies sur le git, permettent par exemple de stocker des mots de passe, des token, ou plus
+                       simplement la marque du site.
 
-          </div>
-        </article>
-        <SectionDivider />
-        <h3>Compétences Entreprendre</h3>
-        <article>
-          <div class="article-inner">
-            <p>Les compétences Entreprendre ici</p>
-          </div>
-          <img src="@/assets/images/profil.jpeg">
-        </article>
+                       L’optimisation quant à elle à été plus profonde et plus longue à mettre en place. En effet sur les
+                       sites
+                       nous avions, et avons encore, des fichiers de fonctions PHP de plusieurs millier de lignes. Ces
+                       fichiers
+                       se répètent de plugins en plugins. J’ai donc entrepris de mettre toutes ces fonctions dans des classes
+                       spécifiques hors des fichiers de thèmes et des fichiers de plugin. Ainsi si un plugin à besoin de
+                       récupérer la note d’un service, il nous suffit d’appeler une fonction de la classe
+                       “ReviewsDataFetcher”.
+                       J’ai profité de cette mutualisation du code pour mettre en place des procédures stockées, qui sont plus
+                       sûres, rapides et efficientes que les requêtes SQL directement dans le code.
+                       Finalement j’ai aussi réduit la taille des fichiers JavaScripts pour qu’ils ne fassent plus que le
+                       minimum. Lorsqu’une requête AJAX est faite, c’est la classe PHP qui est recalculée par le serveur
+                       Apache.
+                       Ainsi le tableau des données récupéré par notre API (OZONE) n’est jamais accessible depuis la console.
+                    </p>
+                    <div class="article-picture">
+                      <img src="@/assets/images/profil.jpeg">
+                      <img src="@/assets/images/profil.jpeg">
+                      <img src="@/assets/images/profil.jpeg">
+                      <img src="@/assets/images/profil.jpeg">
+
+                    </div>
+                  </article>
+                  <SectionDivider />
+                  <h3>Compétences Entreprendre</h3>
+                  <article>
+                    <div class="article-inner">
+                      <p>Les compétences Entreprendre ici</p>
+                    </div>
+                    <img src="@/assets/images/profil.jpeg">
+                  -->
       </div>
     </section>
     <img class="decor-mid" src="@/assets/images/plant2.svg" aria-hidden="true">
@@ -192,7 +196,8 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
-  & p{
+
+  & p {
   }
 }
 </style>
