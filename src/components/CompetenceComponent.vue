@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, PropType } from 'vue'
+import type { PropType } from 'vue';
 import competencesData from '@/assets/competencesData.json'
 // Import images
 import htmlImg from '@/assets/images/html.svg'
