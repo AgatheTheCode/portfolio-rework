@@ -8,13 +8,12 @@
       <input type="email" id="email" name="email" required>
       <label for="message">Message:</label>
       <textarea id="message" name="message" required></textarea>
-      <button class="submit" @click="submit">Submit</button>
+      <button class="submit">Submit</button>
     </form>
   </div>
 </template>
 <script lang="ts">
 //mail sending
-import { ref } from 'vue'
 
 </script>
 <style scoped>

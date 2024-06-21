@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { defineComponent } from 'vue'
-import SectionDivider from '~/components/SectionDivider.vue'
+import SectionDivider from '@/components/SectionDivider.vue'
 </script>
 
 <template>
