@@ -175,29 +175,3 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
   </wrapper>
 </template>
 
-<style scoped>
-.techno {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: fit-content;
-
-  & img {
-    width: 100%;
-    filter: drop-shadow(5px 5px 10px #838383);
-  }
-}
-
-.text {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-
-  & p {
-  }
-}
-</style>
