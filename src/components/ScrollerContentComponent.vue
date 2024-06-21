@@ -15,19 +15,32 @@ import csharpImg from '@/assets/images/c.svg'
 import sassImg from '@/assets/images/sass.svg'
 import flutterImg from '@/assets/images/flutter.svg'
 
+const isShowLevel = ref(false)
+// Show level
+const showLevel = () => {
+  isShowLevel.value = !isShowLevel.value
+}
 const data = ref({
   labels: ['HTML', 'PHP', 'SQL', 'VueJS', 'ReactJS', 'Laravel', 'JavaScript', 'CSS', 'TypeScript', 'C#', 'SCSS', 'Flutter'],
   img: [htmlImg, phpImg, sqlImg, vuejsImg, reactImg, laravelImg, jsImg, cssImg, tsImg, csharpImg, sassImg, flutterImg]
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+  showLevel()
+})
+
 </script>
 
 <template>
   <div class="inner-scroller" aria-hidden="true">
     <div class="scrollerWrapper">
       <v-banner v-for="(label, index) in data.labels" :key="label" lines="one" :stacked="false" class="scroller">
-        <img :src="data.img[index]" :alt="label">
+        <img :src="data.img[index]" :alt="label" @click="showLevel">
       </v-banner>
     </div>
+  </div>
+  <div v-if="isShowLevel" class="level">
+    <p>Level</p>
   </div>
 </template>
 
@@ -54,6 +67,7 @@ const data = ref({
   align-items: center;
   justify-content: space-evenly;
   width: 90%;
+  height: max-content;
   @media (max-width: 768px) {
     width: 90%;
   }

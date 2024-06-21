@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n'
-import Tr from "../../portfolio-rework/src/i18n/translation"
+import Tr from "@/i18n/translation"
 export default {
   setup() {
     const { t, locale } = useI18n()

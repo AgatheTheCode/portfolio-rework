@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import CompetencesView from '../views/CompetencesView.vue';
 import ExperiencesView from '../views/ExperiencesView.vue';
-import ContactView from '../views/ContactView.vue';
+//import ContactView from '../views/ContactView.vue';
 import ProjectsView from '../views/ProjectsView.vue';
 import MapView from '../views/MapView.vue';
 import AboutView from "../views/AboutView.vue";
@@ -40,11 +40,11 @@ const router = createRouter({
       name: 'education',
       component: EducationView
     },
-    {
+    /*{
       path: '/contact',
       name: 'contact',
       component: ContactView
-    },
+    },*/
     {
       path: '/projects',
       name: 'projects',
