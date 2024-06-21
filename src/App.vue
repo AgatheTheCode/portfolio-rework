@@ -4,20 +4,20 @@ import NavbarComponent from '@/components/NavbarComponent.vue'
 import FooterComponent from '@/components/FooterComponent.vue'
 import { useHead } from '@vueuse/head'
 
-useHead({
+const Index: string = import.meta.env.VITE_ENVIRONEMENT === 'development' ? 'noindex, nofollow' : 'index, follow'
+
+const dataHead = {
   title: 'Portfolio',
   meta: [
-    {
-      name: 'description',
-      content: 'Portfolio'
-    },
-    {
-      name: 'keywords',
-      content: 'Portfolio'
-    }
-  ]
-})
+    { name: 'description', content: 'Portfolio' },
+    { name: 'keywords', content: 'Portfolio Developer Web eco-friendly' },
+    { name: 'author', content: 'Agathe Dufour' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+    { name: 'robots', content: Index },
+  ],
+}
 
+useHead(dataHead)
 </script>
 
 <template>
