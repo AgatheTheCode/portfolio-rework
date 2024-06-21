@@ -18,7 +18,7 @@ import flutterImg from '@/assets/images/flutter.svg'
 const isShowLevel = ref(false)
 // Show level
 const showLevel = () => {
-  isShowLevel.value = !isShowLevel.value
+  //isShowLevel.value = !isShowLevel.value
 }
 const data = ref({
   labels: ['HTML', 'PHP', 'SQL', 'VueJS', 'ReactJS', 'Laravel', 'JavaScript', 'CSS', 'TypeScript', 'C#', 'SCSS', 'Flutter'],
@@ -26,7 +26,7 @@ const data = ref({
 })
 
 document.addEventListener('DOMContentLoaded', () => {
-  showLevel()
+  //showLevel()
 })
 
 </script>

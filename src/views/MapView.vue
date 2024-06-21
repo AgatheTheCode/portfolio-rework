@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-  <img class="decor-bottom" src="@/assets/images/plant.png" aria-hidden="true">
+<background-bottom-flowers/>
 </template>
 
 <script setup lang="ts">
@@ -46,6 +46,7 @@ import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import 'leaflet/dist/leaflet.css'
 import { ref } from 'vue'
 import SectionDivider from '@/components/SectionDivider.vue'
+import BackgroundBottomFlowers from '@/components/backgroundBottomFlowers.vue'
 //letiables globales
 let lat: number = 47.3686498
 let long: number = 8.5391825

@@ -3,12 +3,13 @@
 import SectionDivider from '@/components/SectionDivider.vue'
 import ArticleDivider from '@/components/ArticleDivider.vue'
 import CompetenceComponent from '@/components/CompetenceComponent.vue'
+import BackgroundTopFlowers from '@/components/backgroundTopFlowers.vue'
+import BackgroundBottomFlowers from '@/components/backgroundBottomFlowers.vue'
 
 </script>
 
 <template>
-  <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true" alt="">
-
+<background-top-flowers />
   <!--
 
 Cette page présente les consignes concernant le portfolio du S6, module qui se déroule sur les semaines
@@ -170,8 +171,7 @@ Il y a donc à la fois un travail sur le contenu, et une démarche complète de 
                   -->
       </div>
     </section>
-    <img class="decor-mid" src="@/assets/images/plant2.svg" aria-hidden="true">
-    <img class="decor-bottom" src="@/assets/images/plant.png" aria-hidden="true">
+    <background-bottom-flowers/>
   </wrapper>
 </template>
 
