@@ -1,6 +1,11 @@
 {
   "paragraphs": {
-    "Développement d'un CMS Laravel-VueJS": [
+    "0": [
+      {
+        "id": 0,
+        "tag": "h2",
+        "content": "Développement d'un CMS Laravel-VueJS"
+      },
       {
         "id": 1,
         "tag": "p",
@@ -9,7 +14,8 @@
       {
         "id": 2,
         "tag": "p",
-        "content": "Nous avons donc envisagé plusieurs solutions :"},
+        "content": "Nous avons donc envisagé plusieurs solutions :"
+      },
       {
         "id": 3,
         "tag": "ul",
@@ -96,6 +102,132 @@
         "id": 12,
         "tag": "p",
         "content": "Une fois ces trois phases achevées, nous pourrons entamer la refonte d’un de nos sites."
+      }
+    ],
+    "1": [
+      {
+        "id": 0,
+        "tag": "h2",
+        "content": "Refonte du Back-end de Domaliance"
+      },
+      {
+        "id": 1,
+        "tag": "p",
+        "content": "Cette refonte poursuit trois objectifs principaux : sécuriser, optimiser et fiabiliser le site."
+      },
+      {
+        "id": 2,
+        "tag": "h3",
+        "content": "1. Sécurisation du site :"
+      },
+      {
+        "id": 3,
+        "tag": "p",
+        "content": "La sécurisation du site a été renforcée grâce à la mise en place de variables d'environnement. Ces variables sont essentielles pour stocker des informations sensibles de manière sécurisée. Par exemple, des mots de passe, des tokens d'authentification, ou même des informations spécifiques à la marque du site peuvent être stockées dans ces variables."
+      },
+      {
+        "id": 4,
+        "tag": "p",
+        "content": "Ces variables ne sont pas suivies sur le dépôt Git, ce qui empêche toute fuite accidentelle d'informations sensibles. Cela garantit que même si le code source est partagé ou rendu public, les informations critiques ne sont jamais exposées."
+      },
+      {
+        "id": 5,
+        "tag": "h3",
+        "content": "2. Optimisation du site :"
+      },
+      {
+        "id": 6,
+        "tag": "p",
+        "content": "L'optimisation a nécessité une révision en profondeur du code. Initialement, le site contenait des fichiers de fonctions PHP de plusieurs milliers de lignes, souvent dupliquées entre différents plugins. Cette redondance augmentait la complexité du maintien et de la mise à jour du code."
+      },
+      {
+        "id": 7,
+        "tag": "h4",
+        "content": "Utilisation de classes spécifiques :"
+      },
+      {
+        "id": 8,
+        "tag": "p",
+        "content": "Toutes les fonctions redondantes ont été extraites et regroupées dans des classes spécifiques. Par exemple, pour obtenir la note d'un service, il suffit maintenant d'appeler une méthode de la classe “ReviewsDataFetcher”. Cela permet une meilleure organisation du code, une réutilisation efficace des fonctions et une réduction de la redondance."
+      },
+      {
+        "id": 9,
+        "tag": "h4",
+        "content": "Procédures stockées :"
+      },
+      {
+        "id": 10,
+        "tag": "p",
+        "content": "En parallèle, des procédures stockées ont été mises en place pour remplacer les requêtes SQL directes. Les procédures stockées sont exécutées directement par le serveur de base de données, offrant des performances améliorées et une sécurité accrue par rapport aux requêtes SQL traditionnelles."
+      },
+      {
+        "id": 11,
+        "tag": "h3",
+        "content": "3. Fiabilisation du site :"
+      },
+      {
+        "id": 12,
+        "tag": "p",
+        "content": "Pour améliorer les performances et la fiabilité, la taille des fichiers JavaScript a été réduite. Seul le code essentiel est conservé, ce qui allège la charge de traitement côté client."
+      },
+      {
+        "id": 13,
+        "tag": "p",
+        "content": "Lorsqu'une requête AJAX est effectuée, le traitement est géré par des classes PHP sur le serveur Apache. Cette approche garantit que les données sensibles ne sont jamais exposées à la console du navigateur."
+      },
+      {
+        "id": 14,
+        "tag": "p",
+        "content": "n utilisant cette méthode, le tableau des données envoyé par notre API (Ozone) est sécurisé. Les données ne transitent pas de manière brute vers le client, ce qui assure la qualité et l'authenticité des informations fournies aux utilisateurs finaux."
+      },
+      {
+        "id": 15,
+        "tag": "p",
+        "content": "En résumé, la refonte du back-end de Domaliance a permis de sécuriser les informations sensibles, d'optimiser l'architecture du code pour une meilleure performance et maintenabilité, et de fiabiliser le processus de traitement des données pour garantir leur qualité et authenticité."
+      }
+    ],
+    "2": [
+      {
+        "id": 0,
+        "tag": "h2",
+        "content": "Mise en place de l'Intégration Continue et du Développement Continu (CI/CD)"
+      },
+      {
+        "id": 1,
+        "tag": "p",
+        "content": "Le développement de nos sites a longtemps été chaotique à plusieurs niveaux. Par exemple, nous étions contraints de faire nos modifications en FTP sur les environnements de préproduction, et nous avions deux projets Git distincts pour les environnements de préproduction et de production. Ces problèmes nous ont fait perdre beaucoup de temps et ont généré de nombreux bugs qui auraient pu être évités."
+      },
+      {
+        "id": 2,
+        "tag": "p",
+        "content": "Pour remédier à ces difficultés, Michaël Stark, le responsable du pôle Web R&D, nous a proposé de mettre en place une solution d'Intégration Continue et de Développement Continu (CI/CD) pour nos sites. Après qu'il nous ait expliqué le fonctionnement des GitHub Actions, Léo Imbs et moi-même avons implémenté les scripts nécessaires sur les environnements de préproduction et de production."
+      },
+      {
+        "id": 3,
+        "tag": "p",
+        "content": "Grâce à la mise en place du CI/CD, nous n'avons désormais plus qu'un seul projet Git par site, sans pour autant devoir pousser toutes nos modifications directement en production. En effet, les modifications ne peuvent être déployées en production que si le commit à pousser possède un tag de type \"x.x.x.x\" (les \"x\" étant numériques)."
+      },
+      {
+        "id": 4,
+        "tag": "p",
+        "content": "Cette méthode de travail a simplifié notre workflow de manière significative, et il nous est désormais difficile d'imaginer revenir en arrière. Le CI/CD a non seulement amélioré notre efficacité, mais aussi réduit les risques de bugs, rendant notre processus de développement beaucoup plus fiable et fluide."
+      }
+    ],
+    "3": [
+      {
+        "id": 0,
+        "tag": "h2",
+        "content": "Développement d'une application mobile Flutter"
+      },
+      {
+        "id": 1,
+        "tag": "p",
+        "content": "J'ai eu l'opportunité de concevoir plusieurs applications intégrant des dispositifs interactifs sophistiqués, telles que \"Acab Locator\" développée en Flutter. Cette application permet aux utilisateurs de photographier des graffitis ACAB et de les géolocaliser. Pour assurer la sécurité et la fiabilité des données, j'ai mis en place un système d'authentification géré par Firebase, un service de Google."
+      },
+      {
+        "id": 2,
+        "tag" : "a",
+        "content": "https://github.com/AgatheTheCode/AcabLocatorApp"
       }
     ]
   }

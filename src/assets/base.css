@@ -22,6 +22,21 @@ main {
     min-height: 100vh;
     height: fit-content;
 }
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem;
+    padding: .25rem;
+    top: 30vh;
+    left: 5vw;
+    position: fixed;
+    background-color: #f1f8e9;
+    border-radius: 10px;
+    box-shadow: 5px 10px 27px -4px #282828;
+}
 
 .wrap {
     display: flex;
@@ -121,31 +136,14 @@ h3 {
 
 h4 {
     font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin: .25rem;
+    padding: .25rem;
     @media (max-width: 768px) {
         font-size: 1rem;
     }
 }
 
-h5 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.5rem;
-    text-align: center;
-    color: #181818;
-    margin: 1rem;
-    text-decoration-line: underline;
-    @media (max-width: 768px) {
-        font-size: 1rem;
-    }
-}
-
-h6 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 0.8rem;
-    @media (max-width: 768px) {
-        font-size: 0.8rem;
-    }
-}
 
 p {
     font-family: 'Noto Serif', serif;
@@ -288,3 +286,9 @@ a:visited {
     right: 0;
 }
 
+
+.icon {
+    height: 1rem;
+    margin: 0;
+    padding: 0;
+}
