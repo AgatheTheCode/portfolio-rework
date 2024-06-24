@@ -3,9 +3,7 @@ import flowerImg from '@/assets/images/plant1.webp'
 </script>
 
 <template>
-  <img class="decor" :src="flowerImg" aria-hidden="true" alt="">
+  <img class="decor" :src="flowerImg" aria-hidden="true" alt="" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

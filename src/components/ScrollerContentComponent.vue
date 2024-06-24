@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
-// Import images
 import htmlImg from '@/assets/images/html.svg'
 import phpImg from '@/assets/images/php.svg'
 import sqlImg from '@/assets/images/sql.svg'
@@ -15,31 +13,53 @@ import csharpImg from '@/assets/images/c.svg'
 import sassImg from '@/assets/images/sass.svg'
 import flutterImg from '@/assets/images/flutter.svg'
 
-const isShowLevel = ref(false)
-// Show level
-const showLevel = () => {
-  //isShowLevel.value = !isShowLevel.value
-}
 const data = ref({
-  labels: ['HTML', 'PHP', 'SQL', 'VueJS', 'ReactJS', 'Laravel', 'JavaScript', 'CSS', 'TypeScript', 'C#', 'SCSS', 'Flutter'],
-  img: [htmlImg, phpImg, sqlImg, vuejsImg, reactImg, laravelImg, jsImg, cssImg, tsImg, csharpImg, sassImg, flutterImg]
+  labels: [
+    'HTML',
+    'PHP',
+    'SQL',
+    'VueJS',
+    'ReactJS',
+    'Laravel',
+    'JavaScript',
+    'CSS',
+    'TypeScript',
+    'C#',
+    'SCSS',
+    'Flutter'
+  ],
+  img: [
+    htmlImg,
+    phpImg,
+    sqlImg,
+    vuejsImg,
+    reactImg,
+    laravelImg,
+    jsImg,
+    cssImg,
+    tsImg,
+    csharpImg,
+    sassImg,
+    flutterImg
+  ]
 })
-
-document.addEventListener('DOMContentLoaded', () => {
-  //showLevel()
-})
-
 </script>
 
 <template>
   <div class="inner-scroller" aria-hidden="true">
     <div class="scrollerWrapper">
-      <v-banner v-for="(label, index) in data.labels" :key="label" lines="one" :stacked="false" class="scroller">
-        <img :src="data.img[index]" :alt="label" @click="showLevel">
+      <v-banner
+        v-for="(label, index) in data.labels"
+        :key="label"
+        lines="one"
+        :stacked="false"
+        class="scroller"
+      >
+        <img :src="data.img[index]" :alt="label" />
       </v-banner>
     </div>
   </div>
-  <div v-if="isShowLevel" class="level">
+  <div class="level">
     <p>Level</p>
   </div>
 </template>
@@ -72,7 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     width: 90%;
   }
 }
-
 
 .scrollerWrapper img {
   margin: 0 10px;
