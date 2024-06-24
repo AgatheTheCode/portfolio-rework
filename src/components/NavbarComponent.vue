@@ -10,7 +10,7 @@ const toggleNav = () => {
 </script>
 
 <template>
-  <nav>
+  <nav role="navigation">
     <div class="nav1">
       <h1>
         <RouterLink to="/" class="title">

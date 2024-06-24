@@ -34,7 +34,7 @@ useHead(dataHead)
 </script>
 
 <template>
-  <header>
+  <header role="banner">
     <div class="wrapper">
       <NavbarComponent />
     </div>
