@@ -102,12 +102,10 @@ section {
 }
 
 article {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     @media (max-width: 768px) {
-        padding: 1rem;
         width: 90%;
     }
 }

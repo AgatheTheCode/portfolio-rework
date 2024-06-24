@@ -1,21 +1,11 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
+import { computed } from 'vue'
+import { defineProps } from 'vue'
+import type { PropType } from 'vue'
+import { imageImports } from '@/plugins/imageImport' // Import the image mapping
 import competencesData from '@/assets/competencesData.json'
-// Import images
-import htmlImg from '@/assets/images/html.svg'
-import phpImg from '@/assets/images/php.svg'
-import sqlImg from '@/assets/images/sql.svg'
-import vuejsImg from '@/assets/images/vuejs.png'
-import reactImg from '@/assets/images/react.svg'
-import laravelImg from '@/assets/images/laravel.svg'
-import jsImg from '@/assets/images/js.png'
-import cssImg from '@/assets/images/css.png'
-import tsImg from '@/assets/images/ts.png'
-import csharpImg from '@/assets/images/c.svg'
-import sassImg from '@/assets/images/sass.svg'
-import flutterImg from '@/assets/images/flutter.svg'
+import ExternalLink from '@/assets/images/box-arrow-up-right.svg'
 
-// Define interface for individual list items
 interface ListItem {
   id: number;
   tag: string;
@@ -25,102 +15,77 @@ interface ListItem {
 interface Paragraph {
   id: number;
   tag: string;
-  content?: string; // Content for paragraphs
-  items?: ListItem[]; // Optional items array for lists
+  content?: string;
+  items?: ListItem[];
 }
 
 interface CompetencesData {
-  paragraphs: Record<string, Paragraph[]>; // Using Record<string, Paragraph[]> to allow dynamic keys
+  paragraphs: Record<string, Paragraph[]>;
 }
 
 const props = defineProps({
+  article: {
+    id: Number,
+    required: true
+  },
   technologies: {
     type: Array as PropType<{ id: number; img: string; name: string }[]>,
     required: true
   }
 })
 
-associateTechImg(props)
-
-//associate the image with the technology
-function associateTechImg(props: { technologies: { id: number; img: string; name: string }[] }) {
-  props.technologies.forEach((tech) => {
-    switch (tech.name) {
-      case 'HTML':
-        tech.img = htmlImg
-        break
-      case 'PHP':
-        tech.img = phpImg
-        break
-      case 'SQL':
-        tech.img = sqlImg
-        break
-      case 'VueJS':
-        tech.img = vuejsImg
-        break
-      case 'ReactJS':
-        tech.img = reactImg
-        break
-      case 'Laravel':
-        tech.img = laravelImg
-        break
-      case 'JavaScript':
-        tech.img = jsImg
-        break
-      case 'CSS':
-        tech.img = cssImg
-        break
-      case 'TypeScript':
-        tech.img = tsImg
-        break
-      case 'C#':
-        tech.img = csharpImg
-        break
-      case 'SCSS':
-        tech.img = sassImg
-        break
-      case 'Flutter':
-        tech.img = flutterImg
-        break
-    }
-  })
-}
-
 const data = { competencesData: competencesData as CompetencesData }
+const paragraphs = computed(() => {
+  // Assuming you have imported your JSON data into a variable named `data`
+  return data.competencesData.paragraphs[props.article]
+})
+// Computed property to associate images with technologies
+const technologiesWithImages = computed(() =>
+  props.technologies.map((tech) => ({
+    ...tech,
+    img: imageImports[tech.name]
+  }))
+)
+
+const technologies = computed(() => technologiesWithImages.value)
 
 </script>
 <template>
-  <article>
+  <article v-if="paragraphs">
     <div class="article-inner">
-      <!-- Displaying technologies -->
       <div class="techno">
-        <img v-for="tech in technologies" :key="tech.id" :src="tech.img" :alt="tech.name">
+        <img v-for="tech in technologies" :key="tech.id" :src="tech.img" :alt="tech.name" />
       </div>
 
-      <!-- Displaying paragraphs -->
-      <div class="text" v-for="(paragraphs, sectionName) in data.competencesData.paragraphs" :key="sectionName">
-        <h4>{{ sectionName }}</h4>
-        <template v-for="(paragraph, index) in paragraphs" :key="index">
-          <template v-if="paragraph.content">
+      <div class="text" v-for="(paragraph, index) in paragraphs" :key="index">
+        <template v-if="paragraph.content">
+          <template v-if="paragraph.tag === 'h2'">
+            <h2>{{ paragraph.content }}</h2>
+          </template>
+          <template v-else-if="paragraph.tag === 'h3'">
+            <h3>{{ paragraph.content }}</h3>
+          </template>
+          <template v-else-if="paragraph.tag === 'h4'">
+            <h4>{{ paragraph.content }}</h4>
+          </template>
+          <template v-else-if="paragraph.tag === 'p'">
             <p>{{ paragraph.content }}</p>
           </template>
-          <template v-else-if="paragraph.items">
-            <ul>
-              <li v-for="(item, idx) in paragraph.items" :key="idx"><p> - {{ item.content }}</p></li>
-            </ul>
+          <template v-else-if="paragraph.tag === 'a'">
+            <a :href="paragraph.content" target="_blank">Lien du projet sur GitHub <img class="icon" :src=ExternalLink> </a>
           </template>
+        </template>
+        <template v-else-if="paragraph.items">
+          <ul>
+            <li v-for="(item, idx) in paragraph.items" :key="idx">
+              <p> - {{ item.content }}</p>
+            </li>
+          </ul>
         </template>
       </div>
     </div>
-
-    <!-- Placeholder for article pictures -->
-    <div class="article-picture">
-      <!-- You can add images or other content related to the article here -->
-      <img src="@/assets/logo.svg">
-    </div>
   </article>
 </template>
-
 <style scoped>
 .techno {
   display: flex;
@@ -129,10 +94,10 @@ const data = { competencesData: competencesData as CompetencesData }
   align-items: center;
   width: 100%;
   height: fit-content;
+}
 
-  & img {
-    filter: drop-shadow(5px 5px 10px #838383);
-  }
+.techno img {
+  filter: drop-shadow(5px 5px 10px #838383);
 }
 
 .text {
@@ -142,22 +107,38 @@ const data = { competencesData: competencesData as CompetencesData }
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
+}
 
-  & p {
+.text p,
+.text ul {
+  margin: 0;
+}
+
+.text a{
+  color: #333333;
+  text-decoration: none;
+
+  & .icon {
+    width: 1rem;
+    height: 1rem;
   }
 
-  & ul {
-    padding: 0;
-    margin: 0;
-    & li {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 1rem;
-
-    }
+  & :visited {
+    color: #333333;
   }
 }
-</style>
 
+.text ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.text ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+</style>

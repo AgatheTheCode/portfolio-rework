@@ -18,7 +18,7 @@ const messages = {
       contact: 'Contact'
     },
     subtitle: {
-      home: 'Développeur web junior',
+      home: 'Développeuse web junior',
       aboutMe: 'À propos de moi',
       skills: 'Compétences',
       projects: 'Projets',
