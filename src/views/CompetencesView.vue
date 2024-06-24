@@ -12,6 +12,10 @@ import BackgroundBottomFlowers from '@/components/backgroundBottomFlowers.vue'
   <background-top-flowers />
   <wrapper class="wrap">
     <h1>Mes Compétences</h1>
+    <p class="excerpt">
+      Sur cette page, vous retrouverez les différents projets sur lesquels j'ai travaillé, ainsi que les technologies
+      associées.
+    </p>
     <SectionDivider />
     <section class="competences">
       <div>
@@ -25,6 +29,8 @@ import BackgroundBottomFlowers from '@/components/backgroundBottomFlowers.vue'
             { id: 1, img: 'WordPress', name: 'WordPress' },
             { id: 2, img: 'PHP', name: 'PHP' },
             { id: 3, img: 'JavaScript', name: 'JavaScript' },
+            { id: 4, img: 'SQL', name: 'SQL' },
+
           ]" />
         <ArticleDivider />
         <CompetenceComponent :article="2" :technologies="[

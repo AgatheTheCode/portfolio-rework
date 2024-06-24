@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { defineProps } from 'vue'
 import type { PropType } from 'vue'
 import { imageImports } from '@/plugins/imageImport' // Import the image mapping
 import competencesData from '@/assets/competencesData.json'
 import ExternalLink from '@/assets/images/box-arrow-up-right.svg'
+
+
 
 interface ListItem {
   id: number;
@@ -25,7 +26,7 @@ interface CompetencesData {
 
 const props = defineProps({
   article: {
-    id: Number,
+    type: Number,
     required: true
   },
   technologies: {
@@ -97,6 +98,8 @@ const technologies = computed(() => technologiesWithImages.value)
 }
 
 .techno img {
+  width: auto;
+  height: 5vh;
   filter: drop-shadow(5px 5px 10px #838383);
 }
 

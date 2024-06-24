@@ -37,7 +37,7 @@ import profilePic from '@/assets/images/profil.jpeg'
             web, je crois fermement que l'intégration des pratiques écologiques dans notre travail peut avoir un impact
             significatif sur l'environnement et la société.
           </p>
-          <h5> Réduction de l'Empreinte Carbone</h5>
+          <h3> Réduction de l'Empreinte Carbone</h3>
 
           <p>Le développement web consomme des ressources, notamment à travers l'hébergement de sites web et
              l'utilisation de centres de données. Ces infrastructures nécessitent de l'énergie, souvent provenant de
@@ -46,7 +46,7 @@ import profilePic from '@/assets/images/profil.jpeg'
              conséquent, l'empreinte carbone des sites web. L'utilisation de serveurs alimentés par des énergies
              renouvelables est également une pratique que nous devrions encourager.
           </p>
-          <h5>Développement Durable</h5>
+          <h3>Développement Durable</h3>
 
           <p>Le développement web durable consiste à créer des sites web et des applications qui non seulement répondent
              aux besoins actuels, mais qui sont aussi évolutifs et faciles à maintenir. Cela réduit la nécessité de
@@ -54,7 +54,7 @@ import profilePic from '@/assets/images/profil.jpeg'
              et en utilisant des technologies qui favorisent la longévité des produits numériques, nous contribuons à un
              avenir plus durable.
           </p>
-          <h5>Conception Responsable</h5>
+          <h3>Conception Responsable</h3>
 
           <p>Une conception web écologique prend en compte l'impact environnemental dès les premières étapes du
              développement. Cela inclut l'optimisation des ressources, la réduction de la consommation de bande passante
@@ -62,7 +62,7 @@ import profilePic from '@/assets/images/profil.jpeg'
              fonctionnel, il est aussi respectueux de l'environnement. En priorisant la simplicité et l'efficacité, nous
              pouvons réduire l'empreinte écologique des sites web que nous créons.
           </p>
-          <h5>Sensibilisation et Responsabilité Sociale</h5>
+          <h3>Sensibilisation et Responsabilité Sociale</h3>
 
           <p>En tant que développeurs web, nous avons une responsabilité sociale de sensibiliser nos clients et
              utilisateurs à l'importance de l'écologie dans le numérique. En intégrant des pratiques écologiques dans
@@ -70,7 +70,7 @@ import profilePic from '@/assets/images/profil.jpeg'
              similaires. Cela crée un effet de domino, où l'impact de nos actions peut se propager à travers différentes
              industries et secteurs.
           </p>
-          <h5> Innovation et Compétitivité</h5>
+          <h3> Innovation et Compétitivité</h3>
           <p>
             L'intégration de l'écologie dans le développement web stimule l'innovation. En cherchant constamment à
             améliorer l'efficacité et la durabilité de nos projets, nous découvrons de nouvelles technologies et

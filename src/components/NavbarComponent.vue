@@ -26,17 +26,17 @@ const toggleNav = () => {
     <div class="nav2">
       <ul>
         <li>
-          <RouterLink to="/competences" class="aNav">Skills</RouterLink>
-        </li>
-        <!-- <li>
-          <RouterLink to="/education" class="aNav">Education</RouterLink>
+          <RouterLink to="/competences" class="aNav">Compétences</RouterLink>
         </li>
         <li>
+          <RouterLink to="/education" class="aNav">Éducation</RouterLink>
+        </li>
+        <!-- <li>
           <RouterLink to="/contact" class="aNav">Contact</RouterLink>
         </li>
         -->
         <li>
-          <RouterLink to="/map" class="aNav">Map</RouterLink>
+          <RouterLink to="/map" class="aNav">Carte</RouterLink>
         </li>
 
       </ul>
