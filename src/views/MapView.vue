@@ -1,8 +1,8 @@
 <template>
   <div class="sectionMap">
-    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true">
+    <img class="decor" src="@/assets/images/plant1.webp" aria-hidden="true" />
     <h1>La Carte</h1>
-    <SectionDivider/>
+    <SectionDivider />
     <div class="map">
       <div class="map-controls">
         <h2>Controls</h2>
@@ -37,7 +37,7 @@
       </div>
     </div>
   </div>
-<background-bottom-flowers/>
+  <background-bottom-flowers />
 </template>
 
 <script setup lang="ts">
@@ -130,6 +130,4 @@ const buttonClicked = (id: string) => {
     height: 50vh;
   }
 }
-
-
 </style>

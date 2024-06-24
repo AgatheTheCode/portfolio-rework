@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import ScrollerContentComponent from '@/components/ScrollerContentComponent.vue'
 </script>
 
@@ -10,9 +9,7 @@ import ScrollerContentComponent from '@/components/ScrollerContentComponent.vue'
 </template>
 
 <style scoped>
-
 #scroller-container {
-
   display: flex;
   background-color: #111111;
   justify-content: center;
@@ -21,5 +18,4 @@ import ScrollerContentComponent from '@/components/ScrollerContentComponent.vue'
   width: 100vw;
   margin: 0;
 }
-
 </style>
