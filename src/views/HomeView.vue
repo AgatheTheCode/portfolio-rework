@@ -8,13 +8,13 @@ import profilePic from '@/assets/images/profil.jpeg'
 </script>
 
 <template>
-  <main>
+  <main role="main">
     <background-top-flowers />
     <div class="skills">
       <ScrollerComponent />
     </div>
     <wrapper class="wrap">
-      <section class="title">
+      <section role="region" class="title">
         <h1>Agathe Dufour</h1>
         <h2>{{ $t('subtitle.home') }}</h2>
         <SectionDivider />
@@ -29,7 +29,7 @@ import profilePic from '@/assets/images/profil.jpeg'
         </div>
       </section>
       <SectionDivider />
-      <section>
+      <section role="region">
         <h2>Écologie et Dévelopement Web</h2>
         <div class="ecologie">
           <p>

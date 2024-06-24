@@ -28,11 +28,12 @@ let data = [
 </script>
 
 <template>
+  <main role="main">
   <wrapper>
-    <section class="title">
+    <section class="title" role="region">
       <h3>Education</h3>
     </section>
-    <section class="content">
+    <section class="content" role="region">
       <div v-for="item in data">
         <h4>{{ item.title }}</h4>
         <p>{{ item.date }}</p>
@@ -42,4 +43,5 @@ let data = [
       </div>
     </section>
   </wrapper>
+  </main>
 </template>
