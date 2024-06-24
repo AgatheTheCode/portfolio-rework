@@ -52,7 +52,7 @@ const technologies = computed(() => technologiesWithImages.value)
 
 </script>
 <template>
-  <article v-if="paragraphs">
+  <article v-if="paragraphs" role="region">
     <div class="article-inner">
       <div class="techno">
         <img v-for="tech in technologies" :key="tech.id" :src="tech.img" :alt="tech.name" />

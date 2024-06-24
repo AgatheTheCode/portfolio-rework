@@ -6,9 +6,8 @@ import vuejsImg from '@/assets/images/vuejs.png'
 </script>
 
 <template>
-  <footer>
+  <footer role="contentinfo">
     <div class="links">
-      <h3>Liens</h3>
       <div class="links_div">
         <a href="https://www.linkedin.com/in/agathe-dufour" target="_blank">
           <img :src="lkdinImg" alt="" aria-hidden="true"/>
@@ -19,10 +18,6 @@ import vuejsImg from '@/assets/images/vuejs.png'
        <!-- <a href="/src/assets/files/resume.pdf" target="_blank"
           ><img src="/src/assets/images/flag.png" alt=""
         /></a> -->
-      </div>
-      <div>
-        <p>Plan du site</p>
-        <p>Mentions légales</p>
       </div>
       <div class="credit">
         <p>Agathe Dufour - 2024</p>
