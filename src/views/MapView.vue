@@ -61,7 +61,7 @@ function init() {
   let long: number = 8.5391825
   //let text: string = 'Zurich is a city'
   let mapData: any = {}
-  text.value = 'Zurich is a city'
+  text.value = 'WIP'
   center.value = latLng(lat, long)
 }
 
@@ -74,7 +74,6 @@ mapData = {
   url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }
-// Fonction fléchée pour gérer le clic sur le bouton
 const buttonClicked = (id: string) => {
   let txt: string = ''
   console.log(id)
@@ -118,7 +117,6 @@ const buttonClicked = (id: string) => {
 .map-container {
   height: 90vh;
   width: 70vw;
-  background-color: aquamarine;
   border-radius: 10px;
   margin: auto;
   & #map {

@@ -13,11 +13,11 @@ import flutterImg from '@/assets/images/flutter.png';
 import wordpressImg from '@/assets/images/wp.png';
 import git from '@/assets/images/git.png';
 import github from '@/assets/images/gthb.png';
+import sql from '@/assets/images/sql.png';
 
-export const imageImports = {
+export const imageImports: { [key: string]: string } = {
   HTML: htmlImg,
   PHP: phpImg,
-  SQL: sqlImg,
   VueJS: vuejsImg,
   ReactJS: reactImg,
   Laravel: laravelImg,
@@ -30,4 +30,5 @@ export const imageImports = {
   WordPress: wordpressImg,
   Git: git,
   GitHub: github,
+  SQL: sql,
 };

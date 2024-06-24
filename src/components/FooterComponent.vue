@@ -27,7 +27,7 @@ import vuejsImg from '@/assets/images/vuejs.png'
       <div class="credit">
         <p>Agathe Dufour - 2024</p>
         <p>|</p>
-        <p>développé avec </p> <img :src="vuejsImg" alt="" aria-hidden="true"/>
+        <p>développé avec </p> <img :src="vuejsImg" alt="VueJs"/>
       </div>
     </div>
   </footer>
