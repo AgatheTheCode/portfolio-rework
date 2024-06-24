@@ -1,8 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <section class="experiences">
-   WIP
-  </section>
+  <section class="experiences">WIP</section>
 </template>
 
 <style scoped></style>

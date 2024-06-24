@@ -13,9 +13,7 @@ const toggleNav = () => {
   <nav role="navigation">
     <div class="nav1">
       <h1>
-        <RouterLink to="/" class="title">
-          Agathe Dufour
-        </RouterLink>
+        <RouterLink to="/" class="title"> Agathe Dufour </RouterLink>
       </h1>
     </div>
     <!-- <div class="burger" @click="toggleNav">
@@ -38,7 +36,6 @@ const toggleNav = () => {
         <li>
           <RouterLink to="/map" class="aNav">Carte</RouterLink>
         </li>
-
       </ul>
     </div>
     <!--<div class="nav3">
@@ -86,7 +83,6 @@ nav {
   width: max-content;
   height: 100%;
 
-
   & ul {
     display: flex;
     list-style: none;
@@ -101,23 +97,22 @@ nav {
 
 @media (max-width: 768px) {
   .nav2 {
-    gap: .25rem;
+    gap: 0.25rem;
     width: 39%;
 
     & ul {
       display: flex;
       flex-direction: row;
-      gap: .25rem;
+      gap: 0.25rem;
       margin: 0;
       padding: 0;
 
       & li {
-        margin: .25rem 0;
-        padding: .25rem;
+        margin: 0.25rem 0;
+        padding: 0.25rem;
         text-align: center;
       }
     }
   }
 }
-
 </style>

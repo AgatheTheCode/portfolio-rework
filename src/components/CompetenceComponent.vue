@@ -5,23 +5,21 @@ import { imageImports } from '@/plugins/imageImport' // Import the image mapping
 import competencesData from '@/assets/competencesData.json'
 import ExternalLink from '@/assets/images/box-arrow-up-right.svg'
 
-
-
 interface ListItem {
-  id: number;
-  tag: string;
-  content: string;
+  id: number
+  tag: string
+  content: string
 }
 
 interface Paragraph {
-  id: number;
-  tag: string;
-  content?: string;
-  items?: ListItem[];
+  id: number
+  tag: string
+  content?: string
+  items?: ListItem[]
 }
 
 interface CompetencesData {
-  paragraphs: Record<string, Paragraph[]>;
+  paragraphs: Record<string, Paragraph[]>
 }
 
 const props = defineProps({
@@ -37,10 +35,8 @@ const props = defineProps({
 
 const data = { competencesData: competencesData as CompetencesData }
 const paragraphs = computed(() => {
-  // Assuming you have imported your JSON data into a variable named `data`
   return data.competencesData.paragraphs[props.article]
 })
-// Computed property to associate images with technologies
 const technologiesWithImages = computed(() =>
   props.technologies.map((tech) => ({
     ...tech,
@@ -49,7 +45,6 @@ const technologiesWithImages = computed(() =>
 )
 
 const technologies = computed(() => technologiesWithImages.value)
-
 </script>
 <template>
   <article v-if="paragraphs" role="region">
@@ -73,13 +68,15 @@ const technologies = computed(() => technologiesWithImages.value)
             <p>{{ paragraph.content }}</p>
           </template>
           <template v-else-if="paragraph.tag === 'a'">
-            <a :href="paragraph.content" target="_blank">Lien du projet sur GitHub <img class="icon" :src=ExternalLink> </a>
+            <a :href="paragraph.content" target="_blank"
+              >Lien du projet sur GitHub <img class="icon" :src="ExternalLink" />
+            </a>
           </template>
         </template>
         <template v-else-if="paragraph.items">
           <ul>
             <li v-for="(item, idx) in paragraph.items" :key="idx">
-              <p> - {{ item.content }}</p>
+              <p>- {{ item.content }}</p>
             </li>
           </ul>
         </template>
@@ -117,7 +114,7 @@ const technologies = computed(() => technologiesWithImages.value)
   margin: 0;
 }
 
-.text a{
+.text a {
   color: #333333;
   text-decoration: none;
 
@@ -143,5 +140,4 @@ const technologies = computed(() => technologiesWithImages.value)
   align-items: center;
   gap: 1rem;
 }
-
 </style>
